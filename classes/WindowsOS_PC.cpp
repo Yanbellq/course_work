@@ -32,3 +32,11 @@ void WindowsOS_PC::interface2()
          << "            BROKEN" << endl
          << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 };
+
+void WindowsOS_PC::interface3()
+{
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+         << "     CAUTION AUDITORIUM 1" << endl
+         << "         BROKEN IN FIX" << endl
+         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+};

@@ -730,3 +730,152 @@ void ShowFixAu2()
 
     finCom.close();
 }
+
+void DeleteElementByIDFixAu1()
+{
+    string filename = R"(T:\\course_work\\data-base\\broken_in_fix_au1.txt)";
+
+    unique_ptr<int> versionOfOS {new int {0}};
+    unique_ptr<string> nameScreen {new string {"unknown"}};
+    unique_ptr<string> nameCPU {new string {"unknown"}};
+    unique_ptr<string> nameGPU {new string {"unknown"}};
+    unique_ptr<bool> withCD {new bool {false}};
+    unique_ptr<bool> withFloppy {new bool {false}};
+    unique_ptr<string> typeOfKeyboard {new string {"unknown"}};
+    unique_ptr<int> localNumber {new int {0}};
+    unique_ptr<bool> isBroken {new bool {false}};
+    unique_ptr<bool> isInFix {new bool {false}};
+    unique_ptr<bool> isFixed {new bool {false}};
+
+    unique_ptr<int> ID {new int {0}};
+
+    cout << "Enter ID: ";
+    cin >> *ID;
+
+    ifstream finCom(filename);
+    ofstream foutCom("temp.txt");
+
+    while (finCom >> *versionOfOS >> *nameScreen >> *nameCPU >> *nameGPU >> *withCD >> *withFloppy >> *typeOfKeyboard >> *localNumber >> *isBroken >> *isInFix >> *isFixed)
+    {
+        if (*ID != *localNumber)
+        {
+            foutCom << *versionOfOS << " " << *nameScreen << " " << *nameCPU << " " << *nameGPU << " " << *withCD << " "
+                    << *withFloppy << " " << *typeOfKeyboard << " " << *localNumber << " " << *isBroken << " " << *isInFix << " "
+                    << *isFixed << endl;
+        }
+    }
+
+    finCom.close();
+    foutCom.close();
+
+    remove(filename.c_str());
+    rename("temp.txt", filename.c_str());
+
+    cout << "Computer with this ID: '" << *ID << "' was deleted from 1st auditorium data-base with broken computers in fix" << endl;
+}
+
+void DeleteElementByIDFixAu2()
+{
+    string filename = R"(T:\\course_work\\data-base\\broken_in_fix_au2.txt)";
+
+    unique_ptr<int> versionOfOS {new int {0}};
+    unique_ptr<string> nameScreen {new string {"unknown"}};
+    unique_ptr<string> nameCPU {new string {"unknown"}};
+    unique_ptr<string> nameGPU {new string {"unknown"}};
+    unique_ptr<int> hardDiscCapacity{new int {0}};
+    unique_ptr<string> typeOfKeyboard {new string {"unknown"}};
+    unique_ptr<int> localNumber {new int {0}};
+    unique_ptr<bool> isBroken {new bool {false}};
+    unique_ptr<bool> isInFix {new bool {false}};
+    unique_ptr<bool> isFixed {new bool {false}};
+
+    unique_ptr<int> ID {new int {0}};
+
+    cout << "Enter ID: ";
+    cin >> *ID;
+
+    ifstream finCom(filename);
+    ofstream foutCom("temp.txt");
+
+    while (finCom >> *versionOfOS >> *nameScreen >> *nameCPU >> *nameGPU >> *hardDiscCapacity >> *typeOfKeyboard >> *localNumber >> *isBroken >> *isInFix >> *isFixed)
+    {
+        if (*ID != *localNumber)
+        {
+            foutCom << *versionOfOS << " " << *nameScreen << " " << *nameCPU << " " << *nameGPU << " " << *hardDiscCapacity << " "
+                    << *typeOfKeyboard << " " << *localNumber << " " << *isBroken << " " << *isInFix << " " << *isFixed << endl;
+        }
+    }
+
+    finCom.close();
+    foutCom.close();
+
+    remove(filename.c_str());
+    rename("temp.txt", filename.c_str());
+
+    cout << "Computer with this ID: '" << *ID << "' was deleted from 2nd auditorium data-base with broken computers in fix" << endl;
+}
+
+void ChangeToFixedAu1()
+{
+    string fix_au1 = R"(T:\\course_work\\data-base\\broken_in_fix_au1.txt)";
+    string au1 = R"(T:\\course_work\\data-base\\au1.txt)";
+
+    unique_ptr<int> versionOfOS {new int {0}};
+    unique_ptr<string> nameScreen {new string {"unknown"}};
+    unique_ptr<string> nameCPU {new string {"unknown"}};
+    unique_ptr<string> nameGPU {new string {"unknown"}};
+    unique_ptr<bool> withCD {new bool {false}};
+    unique_ptr<bool> withFloppy {new bool {false}};
+    unique_ptr<string> typeOfKeyboard {new string {"unknown"}};
+    unique_ptr<int> localNumber {new int {0}};
+    unique_ptr<bool> isBroken {new bool {false}};
+    unique_ptr<bool> isInFix {new bool {false}};
+    unique_ptr<bool> isFixed {new bool {false}};
+
+    unique_ptr<int> ID {new int {0}};
+
+    ifstream finCom(fix_au1);
+
+    cout << "Enter ID: ";
+    cin >> *ID;
+
+    while (finCom >> *versionOfOS >> *nameScreen >> *nameCPU >> *nameGPU >> *withCD >> *withFloppy >> *typeOfKeyboard >> *localNumber >> *isBroken >> *isInFix >> *isFixed)
+    {
+        if (*ID == *localNumber)
+        {
+            *isBroken = false;
+
+            ofstream foutCom(au1, ios_base::app);
+            foutCom << *versionOfOS << " " << *nameScreen << " " << *nameCPU << " " << *nameGPU << " " << *withCD << " "
+                    << *withFloppy << " " << *typeOfKeyboard << " " << *localNumber << " " << *isBroken << endl;
+
+            foutCom.close();
+        }
+    }
+    finCom.close();
+
+    ifstream finCom1(fix_au1);
+    ofstream foutCom1("temp.txt");
+    while (finCom1 >> *versionOfOS >> *nameScreen >> *nameCPU >> *nameGPU >> *withCD >> *withFloppy >> *typeOfKeyboard >> *localNumber >> *isBroken >> *isInFix >> *isFixed)
+    {
+        if (*ID != *localNumber)
+        {
+            foutCom1 << *versionOfOS << " " << *nameScreen << " " << *nameCPU << " " << *nameGPU << " " << *withCD << " "
+                     << *withFloppy << " " << *typeOfKeyboard << " " << *localNumber << " " << *isBroken << " " << *isInFix << " "
+                     << *isFixed << endl;
+        }
+    }
+
+    finCom1.close();
+    foutCom1.close();
+
+    remove(fix_au1.c_str());
+    rename("temp.txt", fix_au1.c_str());
+
+    cout << "Computer with this ID: '" << *ID << "' was moved to database with workable computers" << endl;
+}
+
+void ChangeToFixedAu2()
+{
+
+}

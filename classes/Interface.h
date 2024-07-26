@@ -9,6 +9,7 @@ class Interface
 protected:
     virtual void interface1() = 0;
     virtual void interface2() = 0;
+    virtual void interface3() = 0;
 };
 
 

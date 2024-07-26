@@ -20,6 +20,7 @@ public:
 
     void interface1() override;
     void interface2() override;
+    void interface3() override;
 };
 
 

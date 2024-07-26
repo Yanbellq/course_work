@@ -1,2 +1,1 @@
-8 samsung amd amd 0 0 fisical 123 0
-11 lenovo amd amd 0 0 digital 125 0
+8 hp amd amd 0 0 digital 123 0

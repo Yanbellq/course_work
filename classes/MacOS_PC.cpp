@@ -31,3 +31,11 @@ void MacOS_PC::interface2()
          << "            BROKEN" << endl
          << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 };
+
+void MacOS_PC::interface3()
+{
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+         << "     CAUTION AUDITORIUM 2" << endl
+         << "         BROKEN IN FIX" << endl
+         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+};

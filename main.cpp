@@ -57,6 +57,10 @@ int main()
                                      << "14. Change to fix in 2nd auditorium" << endl
                                      << "15. Show computers in fix in 1st auditorium" << endl
                                      << "16. Show computers in fix in 2nd auditorium" << endl
+                                     << "17. Delete computer in fix in 1st auditorium" << endl
+                                     << "18. Delete computer in fix in 2nd auditorium" << endl
+                                     << "19. Change to fixed in 1st auditorium" << endl
+                                     << "20. Change to fixed in 2nd auditorium" << endl
                                      << "0. Exit" << endl;
                                 line();
 
@@ -155,12 +159,38 @@ int main()
                                     }
                                     case 15:
                                     {
+                                        WindowsOS_PC windows;
+                                        windows.interface3();
                                         ShowFixAu1();
+                                        curious_line();
                                         break;
                                     }
                                     case 16:
                                     {
+                                        MacOS_PC mac;
+                                        mac.interface3();
                                         ShowFixAu2();
+                                        curious_line();
+                                        break;
+                                    }
+                                    case 17:
+                                    {
+                                        DeleteElementByIDFixAu1();
+                                        break;
+                                    }
+                                    case 18:
+                                    {
+                                        DeleteElementByIDFixAu2();
+                                        break;
+                                    }
+                                    case 19:
+                                    {
+                                        ChangeToFixedAu1();
+                                        break;
+                                    }
+                                    case 20:
+                                    {
+                                        ChangeToFixedAu2();
                                         break;
                                     }
                                     case 0:

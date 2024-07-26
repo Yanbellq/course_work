@@ -1,2 +1,1 @@
-8 hp amd amd 0 0 digital 123 1 0
 10 asus amd amd 0 0 digital 124 1 0
