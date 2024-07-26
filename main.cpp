@@ -48,6 +48,10 @@ int main()
                                      << "2. Add new computer in 2nd auditorium" << endl
                                      << "3. See all computers in 1st auditorium" << endl
                                      << "4. See all computers in 2nd auditorium" << endl
+                                     << "5. Change to broken in 1st auditorium" << endl
+                                     << "6. Change to broken in 2nd auditorium" << endl
+                                     << "7. Delete computer by ID in 1st auditorium" << endl
+                                     << "8. Delete computer by ID in 2nd auditorium" << endl
                                      << "0. Exit" << endl;
                                 line();
 
@@ -58,33 +62,58 @@ int main()
                                 line();
 
 
-                                if (selectAd != 1 && selectAd != 2 && selectAd != 3 && selectAd != 4 && selectAd != 0)
+                                if (selectAd != 1 && selectAd != 2 && selectAd != 3 && selectAd != 4 && selectAd != 5 &&
+                                    selectAd != 6 && selectAd != 7 && selectAd != 8 && selectAd != 0)
                                     throw ChoiceException();
                                 switch (selectAd) {
-                                    case 1: {
+                                    case 1:
+                                    {
                                         line();
                                         AddComputersAu1();
                                         line();
                                         break;
                                     }
-                                    case 2: {
+                                    case 2:
+                                    {
                                         line();
                                         AddComputersAu2();
                                         line();
                                         break;
                                     }
-                                    case 3: {
+                                    case 3:
+                                    {
                                         WindowsOS_PC windows;
                                         windows.interface();
                                         ShowComputersAu1();
                                         curious_line();
                                         break;
                                     }
-                                    case 4: {
+                                    case 4:
+                                    {
                                         MacOS_PC mac;
                                         mac.interface();
                                         ShowComputersAu2();
                                         curious_line();
+                                        break;
+                                    }
+                                    case 5:
+                                    {
+                                        ChangeToBrokenAu1();
+                                        break;
+                                    }
+                                    case 6:
+                                    {
+                                        ChangeToBrokenAu2();
+                                        break;
+                                    }
+                                    case 7:
+                                    {
+                                        DeleteElementByIDAu1();
+                                        break;
+                                    }
+                                    case 8:
+                                    {
+                                        DeleteElementByIDAu2();
                                         break;
                                     }
                                     case 0:
@@ -106,7 +135,7 @@ int main()
                 }
                 if (k == 3) {
                     cerr << "You have reached the maximum number of attempts. The program ends." << endl;
-                    return 1;
+                    return 0;
                 }
                 break;
             }

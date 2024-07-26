@@ -20,11 +20,11 @@ void AddComputersAu1();
 void AddComputersAu2();
 void ShowComputersAu1();
 void ShowComputersAu2();
+void DeleteElementByIDAu1();
+void DeleteElementByIDAu2();
 void ChangeToBrokenAu1();
 void ChangeToBrokenAu2();
 void ShowBrokenComputersAu1();
 void ShowBrokenComputersAu2();
-void ShowByIDAu1();
-void ShowByIDAu2();
 
 #endif
