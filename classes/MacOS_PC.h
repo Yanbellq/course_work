@@ -16,9 +16,10 @@ public:
     MacOS_PC(Computers PC, string versionOfOS, int hardDiscCapacity);
     MacOS_PC(const MacOS_PC& other);
     MacOS_PC(MacOS_PC&& other);
-    ~MacOS_PC();
+    ~MacOS_PC(){};
 
-    void interface() override;
+    void interface1() override;
+    void interface2() override;
 };
 
 

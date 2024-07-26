@@ -24,7 +24,19 @@ void DeleteElementByIDAu1();
 void DeleteElementByIDAu2();
 void ChangeToBrokenAu1();
 void ChangeToBrokenAu2();
-void ShowBrokenComputersAu1();
-void ShowBrokenComputersAu2();
+void ShowBrokenAu1();
+void ShowBrokenAu2();
+void DeleteElementByIDBrokenAu1();
+void DeleteElementByIDBrokenAu2();
+void ChangeToFixAu1();
+void ChangeToFixAu2();
+void ShowFixAu1();
+void ShowFixAu2();
+void DeleteElementByIDFixAu1();
+void DeleteElementByIDFixAu2();
+void ChangeToFixedAu1();
+void ChangeToFixedAu2();
+
+void Registration();
 
 #endif

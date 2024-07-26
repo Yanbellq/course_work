@@ -7,7 +7,8 @@ using namespace std;
 class Interface
 {
 protected:
-    virtual void interface() = 0;
+    virtual void interface1() = 0;
+    virtual void interface2() = 0;
 };
 
 

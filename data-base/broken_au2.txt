@@ -1,1 +1,4 @@
-13 lenovo amd amd 256 fisical 125 1 0
+8 hp amd amd 128 digital 123 1 0
+10 asus amd amd 256 digital 124 1 0
+10 asus amd amd 256 digital 125 1 0
+10 asus amd amd 256 digital 128 1 0

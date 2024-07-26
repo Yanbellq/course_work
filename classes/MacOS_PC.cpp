@@ -17,11 +17,17 @@ MacOS_PC::MacOS_PC(MacOS_PC &&other)
     other.versionOfOS = "unknown";
 };
 
-MacOS_PC::~MacOS_PC() { cout << "Computer with this ID: '" << localNumber << "' was deleted from data-base" << endl;}
-
-void MacOS_PC::interface()
+void MacOS_PC::interface1()
 {
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
-         << "CAUTION AUDITORIUM 2" << endl
+         << "     CAUTION AUDITORIUM 2" << endl
+         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+};
+
+void MacOS_PC::interface2()
+{
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+         << "     CAUTION AUDITORIUM 2" << endl
+         << "            BROKEN" << endl
          << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 };

@@ -1,0 +1,4 @@
+manoma lenovo amd amd 128 fisical 123 0
+manoma lenovo amd amd 256 fisical 124 0
+manoma lenovo amd amd 512 fisical 125 0
+manoma lenovo amd amd 1024 fisical 126 0

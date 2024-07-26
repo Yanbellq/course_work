@@ -14,7 +14,6 @@ int main()
          << "Who are you?" << endl
          << "1. Administrator" << endl
          << "2. Inspector" << endl
-         << "3. Instructions" << endl
          << "0. Exit" << endl;
     line();
     line();
@@ -24,8 +23,6 @@ int main()
     line();
     try
     {
-        if (select != 1 && select != 2 && select != 3 && select != 0)
-            throw ChoiceException();
         switch (select)
         {
             case 1: //Admin
@@ -46,12 +43,20 @@ int main()
                                      << "What you want want to do?" << endl
                                      << "1. Add new computer in 1st auditorium" << endl
                                      << "2. Add new computer in 2nd auditorium" << endl
-                                     << "3. See all computers in 1st auditorium" << endl
-                                     << "4. See all computers in 2nd auditorium" << endl
-                                     << "5. Change to broken in 1st auditorium" << endl
-                                     << "6. Change to broken in 2nd auditorium" << endl
-                                     << "7. Delete computer by ID in 1st auditorium" << endl
-                                     << "8. Delete computer by ID in 2nd auditorium" << endl
+                                     << "3. Show all computers in 1st auditorium" << endl
+                                     << "4. Show all computers in 2nd auditorium" << endl
+                                     << "5. Delete computer by ID in 1st auditorium" << endl
+                                     << "6. Delete computer by ID in 2nd auditorium" << endl
+                                     << "7. Change to broken in 1st auditorium" << endl
+                                     << "8. Change to broken in 2nd auditorium" << endl
+                                     << "9. Show broken computers in 1st auditorium" << endl
+                                     << "10. Show broken computers in 2nd auditorium" << endl
+                                     << "11. Delete broken computer by ID in 1st auditorium" << endl
+                                     << "12. Delete broken computer by ID in 2nd auditorium" << endl
+                                     << "13. Change to fix in 1st auditorium" << endl
+                                     << "14. Change to fix in 2nd auditorium" << endl
+                                     << "15. Show computers in fix in 1st auditorium" << endl
+                                     << "16. Show computers in fix in 2nd auditorium" << endl
                                      << "0. Exit" << endl;
                                 line();
 
@@ -61,10 +66,6 @@ int main()
 
                                 line();
 
-
-                                if (selectAd != 1 && selectAd != 2 && selectAd != 3 && selectAd != 4 && selectAd != 5 &&
-                                    selectAd != 6 && selectAd != 7 && selectAd != 8 && selectAd != 0)
-                                    throw ChoiceException();
                                 switch (selectAd) {
                                     case 1:
                                     {
@@ -83,7 +84,7 @@ int main()
                                     case 3:
                                     {
                                         WindowsOS_PC windows;
-                                        windows.interface();
+                                        windows.interface1();
                                         ShowComputersAu1();
                                         curious_line();
                                         break;
@@ -91,33 +92,81 @@ int main()
                                     case 4:
                                     {
                                         MacOS_PC mac;
-                                        mac.interface();
+                                        mac.interface1();
                                         ShowComputersAu2();
                                         curious_line();
                                         break;
                                     }
                                     case 5:
                                     {
-                                        ChangeToBrokenAu1();
+                                        DeleteElementByIDAu1();
                                         break;
                                     }
                                     case 6:
                                     {
-                                        ChangeToBrokenAu2();
+                                        DeleteElementByIDAu2();
                                         break;
                                     }
                                     case 7:
                                     {
-                                        DeleteElementByIDAu1();
+                                        ChangeToBrokenAu1();
                                         break;
                                     }
                                     case 8:
                                     {
-                                        DeleteElementByIDAu2();
+                                        ChangeToBrokenAu2();
+                                        break;
+                                    }
+                                    case 9:
+                                    {
+                                        WindowsOS_PC windows;
+                                        windows.interface2();
+                                        ShowBrokenAu1();
+                                        curious_line();
+                                        break;
+                                    }
+                                    case 10:
+                                    {
+                                        MacOS_PC mac;
+                                        mac.interface2();
+                                        ShowBrokenAu2();
+                                        curious_line();
+                                        break;
+                                    }
+                                    case 11:
+                                    {
+                                        DeleteElementByIDBrokenAu1();
+                                        break;
+                                    }
+                                    case 12:
+                                    {
+                                        DeleteElementByIDBrokenAu2();
+                                        break;
+                                    }
+                                    case 13:
+                                    {
+                                        ChangeToFixAu1();
+                                        break;
+                                    }
+                                    case 14:
+                                    {
+                                        ChangeToFixAu2();
+                                        break;
+                                    }
+                                    case 15:
+                                    {
+                                        ShowFixAu1();
+                                        break;
+                                    }
+                                    case 16:
+                                    {
+                                        ShowFixAu2();
                                         break;
                                     }
                                     case 0:
                                         return 0;
+                                    default:
+                                        throw ChoiceException();
                                 }
                             }
                         }
@@ -138,6 +187,18 @@ int main()
                     return 0;
                 }
                 break;
+            }
+            case 2: //Inspector
+            {
+                break;
+            }
+            case 0: //Exit
+            {
+                return 0;
+            }
+            default:
+            {
+                throw ChoiceException();
             }
         }
     }

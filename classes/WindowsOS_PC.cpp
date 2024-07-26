@@ -18,11 +18,17 @@ WindowsOS_PC::WindowsOS_PC(WindowsOS_PC &&other)
     other.withFloppy = false;
 };
 
-WindowsOS_PC::~WindowsOS_PC() { cout << "Computer with this ID: '" << localNumber << "' was deleted from data-base" << endl;}
-
-void WindowsOS_PC::interface()
+void WindowsOS_PC::interface1()
 {
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
          << "     CAUTION AUDITORIUM 1" << endl
+         << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+};
+
+void WindowsOS_PC::interface2()
+{
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+         << "     CAUTION AUDITORIUM 1" << endl
+         << "            BROKEN" << endl
          << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 };
