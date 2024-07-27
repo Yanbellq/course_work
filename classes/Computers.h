@@ -7,10 +7,9 @@ using namespace std;
 
 class Computers
 {
-protected:
     string nameCPU, nameScreen, nameGPU, typeOfKeyboard;
-public:
     int localNumber;
+public:
 
     Computers();
     Computers(int localNumber, string nameScreen, string nameCPU, string nameGPU, string typeOfKeyboard);
@@ -18,7 +17,7 @@ public:
     Computers(Computers&& other);
     ~Computers(){};
 
-    string getID() const { return to_string(localNumber); };
+    int getID() const { return localNumber; };
     string getScreen() const { return nameScreen; };
     string getCPU() const { return nameCPU; };
     string getGPU() const { return nameGPU; };

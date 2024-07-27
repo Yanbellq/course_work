@@ -11,7 +11,7 @@ using namespace std;
 class WindowsOS_PC : public Interface
 {
     Computers PC;
-    int versionOfOS, localNumber = PC.localNumber;
+    int versionOfOS, localNumber = PC.getID();
     bool withFloppy, withCD;
 public:
     WindowsOS_PC();

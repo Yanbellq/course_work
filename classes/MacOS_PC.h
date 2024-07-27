@@ -10,7 +10,7 @@ class MacOS_PC : public Interface
 {
     Computers PC;
     string versionOfOS;
-    int hardDiscCapacity, localNumber = PC.localNumber;
+    int hardDiscCapacity, localNumber = PC.getID();
 public:
     MacOS_PC();
     MacOS_PC(Computers PC, string versionOfOS, int hardDiscCapacity);
