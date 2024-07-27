@@ -11,11 +11,10 @@ int main()
 {
     line();
     cout << "Hello my dear friend <3!" << endl
-         << "Who are you?" << endl
+         << "Who are you?" << endl << endl
          << "1. Administrator" << endl
          << "2. Inspector" << endl
          << "0. Exit" << endl;
-    line();
     line();
     int select;
     cout << "Your choice: ";
@@ -40,11 +39,11 @@ int main()
                             while (true) {
                                 line();
                                 cout << "Hello my dear admin <3!" << endl
-                                     << "What you want want to do?" << endl
+                                     << "What you want want to do?" << endl << endl
                                      << "1. Add new computer in 1st auditorium" << endl
                                      << "2. Add new computer in 2nd auditorium" << endl
-                                     << "3. Show all computers in 1st auditorium" << endl
-                                     << "4. Show all computers in 2nd auditorium" << endl
+                                     << "3. Show computers in 1st auditorium" << endl
+                                     << "4. Show computers in 2nd auditorium" << endl
                                      << "5. Delete computer by ID in 1st auditorium" << endl
                                      << "6. Delete computer by ID in 2nd auditorium" << endl
                                      << "7. Change to broken in 1st auditorium" << endl
@@ -61,6 +60,7 @@ int main()
                                      << "18. Delete computer in fix in 2nd auditorium" << endl
                                      << "19. Change to fixed in 1st auditorium" << endl
                                      << "20. Change to fixed in 2nd auditorium" << endl
+                                     << "21. Show Inspectors" << endl
                                      << "0. Exit" << endl;
                                 line();
 
@@ -193,6 +193,15 @@ int main()
                                         ChangeToFixedAu2();
                                         break;
                                     }
+                                    case 21:
+                                    {
+                                        cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl
+                                             << "      CAUTION INSPECTORS" << endl
+                                             << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+                                        ShowInspectors();
+                                        curious_line();
+                                        break;
+                                    }
                                     case 0:
                                         return 0;
                                     default:
@@ -220,6 +229,87 @@ int main()
             }
             case 2: //Inspector
             {
+                Registration();
+
+                try
+                {
+                    while (true)
+                    {
+                        line();
+                        cout << "\nHello my dear inspector <3!" << endl << endl
+                             << "1. Show computers in 1st auditorium" << endl
+                             << "2. Show computers in 2nd auditorium" << endl
+                             << "3. Show broken computers in 1st auditorium" << endl
+                             << "4. Show broken computers in 2nd auditorium" << endl
+                             << "5. Show computers in fix in 1st auditorium" << endl
+                             << "6. Show computers in fix in 2nd auditorium" << endl
+                             << "0. Exit" << endl << endl;
+
+                        int selectIns;
+                        cout << "Your choice: ";
+                        cin >> selectIns;
+
+                        switch (selectIns)
+                        {
+                            case 1:
+                            {
+                                WindowsOS_PC windows;
+                                windows.interface1();
+                                ShowComputersAu1();
+                                curious_line();
+                                break;
+                            }
+                            case 2:
+                            {
+                                MacOS_PC mac;
+                                mac.interface1();
+                                ShowComputersAu2();
+                                curious_line();
+                                break;
+                            }
+                            case 3:
+                            {
+                                WindowsOS_PC windows;
+                                windows.interface2();
+                                ShowBrokenAu1();
+                                curious_line();
+                                break;
+                            }
+                            case 4:
+                            {
+                                MacOS_PC mac;
+                                mac.interface2();
+                                ShowBrokenAu2();
+                                curious_line();
+                                break;
+                            }
+                            case 5:
+                            {
+                                WindowsOS_PC windows;
+                                windows.interface3();
+                                ShowFixAu1();
+                                curious_line();
+                                break;
+                            }
+                            case 6:
+                            {
+                                MacOS_PC mac;
+                                mac.interface3();
+                                ShowFixAu2();
+                                curious_line();
+                                break;
+                            }
+                            case 0:
+                                return 0;
+                            default:
+                                throw ChoiceException();
+                        }
+                    }
+                }
+                catch (ChoiceException & Choice)
+                {
+                    cerr << Choice.what();
+                }
                 break;
             }
             case 0: //Exit

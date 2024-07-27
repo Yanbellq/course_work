@@ -38,5 +38,6 @@ void ChangeToFixedAu1();
 void ChangeToFixedAu2();
 
 void Registration();
+void ShowInspectors();
 
 #endif

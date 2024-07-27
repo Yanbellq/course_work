@@ -116,7 +116,7 @@ void AddComputersAu2()
     unique_ptr<string> nameScreen1 {new string {"unknown"}};
     unique_ptr<string> nameCPU1 {new string {"unknown"}};
     unique_ptr<string> nameGPU1 {new string {"unknown"}};
-    unique_ptr<int> versionOfOS1 {new int {0}};
+    unique_ptr<string> versionOfOS1 {new string {"unknown"}};
     unique_ptr<int> hardDiscCapacity1 {new int {0}};
     unique_ptr<string> typeOfKeyboard1 {new string {"unknown"}};
     unique_ptr<bool> isBroken1 {new bool {false}};
@@ -342,7 +342,7 @@ void ChangeToBrokenAu2()
     string au2 = R"(T:\\course_work\\data-base\\au2.txt)";
     string broken_au2 = R"(T:\\course_work\\data-base\\broken_au2.txt)";
 
-    unique_ptr<int> versionOfOS {new int {0}};
+    unique_ptr<string> versionOfOS {new string {"unknown"}};
     unique_ptr<string> nameScreen {new string {"unknown"}};
     unique_ptr<string> nameCPU {new string {"unknown"}};
     unique_ptr<string> nameGPU {new string {"unknown"}};
@@ -365,10 +365,8 @@ void ChangeToBrokenAu2()
         {
             *isBroken = true;
 
-            ofstream foutCom(broken_au2, ios_base::app);
-            foutCom << *versionOfOS << " " << *nameScreen << " " << *nameCPU << " " << *nameGPU << " " << *hardDiscCapacity << " "
-                    << *typeOfKeyboard << " " << *localNumber << " " << *isBroken << " " << *isInFix << endl;
-
+            ofstream foutCom(R"(T:\course_work\data-base\broken_au2.txt)", ios_base::app);
+            foutCom << *versionOfOS << " " << *nameScreen << " " << *nameCPU << " " << *nameGPU << " " << *hardDiscCapacity << " " << *typeOfKeyboard << " " << *localNumber << " " << *isBroken << " " << *isInFix << endl;
             foutCom.close();
         }
     }
@@ -380,8 +378,7 @@ void ChangeToBrokenAu2()
     {
         if (*ID != *localNumber)
         {
-            foutCom1 << *versionOfOS << " " << *nameScreen << " " << *nameCPU << " " << *nameGPU << " " << *hardDiscCapacity << " "
-                     << *typeOfKeyboard << " " << *localNumber << " " << *isBroken << endl;
+            foutCom1 << *versionOfOS << " " << *nameScreen << " " << *nameCPU << " " << *nameGPU << " " << *hardDiscCapacity << " " << *typeOfKeyboard << " " << *localNumber << " " << *isBroken << endl;
         }
     }
 
@@ -435,7 +432,7 @@ void ShowBrokenAu2()
     if (!finCom.is_open())
         cerr << "Error opening file!" << endl;
 
-    unique_ptr<int> versionOfOS {new int {0}};
+    unique_ptr<string> versionOfOS {new string {"unknown"}};
     unique_ptr<string> nameScreen {new string {"unknown"}};
     unique_ptr<string> nameCPU {new string {"unknown"}};
     unique_ptr<string> nameGPU {new string {"unknown"}};
@@ -507,7 +504,7 @@ void DeleteElementByIDBrokenAu2()
 {
     string filename = R"(T:\\course_work\\data-base\\broken_au2.txt)";
 
-    unique_ptr<int> versionOfOS {new int {0}};
+    unique_ptr<string> versionOfOS {new string {"unknown"}};
     unique_ptr<string> nameScreen {new string {"unknown"}};
     unique_ptr<string> nameCPU {new string {"unknown"}};
     unique_ptr<string> nameGPU {new string {"unknown"}};
@@ -608,7 +605,7 @@ void ChangeToFixAu2()
     string broken_au2 = R"(T:\\course_work\\data-base\\broken_au2.txt)";
     string fix_au2 = R"(T:\\course_work\\data-base\\broken_in_fix_au2.txt)";
 
-    unique_ptr<int> versionOfOS {new int {0}};
+    unique_ptr<string> versionOfOS {new string {"unknown"}};
     unique_ptr<string> nameScreen {new string {"unknown"}};
     unique_ptr<string> nameCPU {new string {"unknown"}};
     unique_ptr<string> nameGPU {new string {"unknown"}};
@@ -703,7 +700,7 @@ void ShowFixAu2()
     if (!finCom.is_open())
         cerr << "Error opening file!" << endl;
 
-    unique_ptr<int> versionOfOS {new int {0}};
+    unique_ptr<string> versionOfOS {new string {"unknown"}};
     unique_ptr<string> nameScreen {new string {"unknown"}};
     unique_ptr<string> nameCPU {new string {"unknown"}};
     unique_ptr<string> nameGPU {new string {"unknown"}};
@@ -778,7 +775,7 @@ void DeleteElementByIDFixAu2()
 {
     string filename = R"(T:\\course_work\\data-base\\broken_in_fix_au2.txt)";
 
-    unique_ptr<int> versionOfOS {new int {0}};
+    unique_ptr<string> versionOfOS {new string {"unknown"}};
     unique_ptr<string> nameScreen {new string {"unknown"}};
     unique_ptr<string> nameCPU {new string {"unknown"}};
     unique_ptr<string> nameGPU {new string {"unknown"}};
@@ -877,5 +874,104 @@ void ChangeToFixedAu1()
 
 void ChangeToFixedAu2()
 {
+    string fix_au2 = R"(T:\\course_work\\data-base\\broken_in_fix_au2.txt)";
+    string au2 = R"(T:\\course_work\\data-base\\au2.txt)";
 
+    unique_ptr<string> versionOfOS {new string {"unknown"}};
+    unique_ptr<string> nameScreen {new string {"unknown"}};
+    unique_ptr<string> nameCPU {new string {"unknown"}};
+    unique_ptr<string> nameGPU {new string {"unknown"}};
+    unique_ptr<int> hardDiscCapacity {new int {0}};
+    unique_ptr<string> typeOfKeyboard {new string {"unknown"}};
+    unique_ptr<int> localNumber {new int {0}};
+    unique_ptr<bool> isBroken {new bool {false}};
+    unique_ptr<bool> isInFix {new bool {false}};
+    unique_ptr<bool> isFixed {new bool {false}};
+
+    unique_ptr<int> ID {new int {0}};
+
+    ifstream finCom(fix_au2);
+
+    cout << "Enter ID: ";
+    cin >> *ID;
+
+    while (finCom >> *versionOfOS >> *nameScreen >> *nameCPU >> *nameGPU >> *hardDiscCapacity >> *typeOfKeyboard >> *localNumber >> *isBroken >> *isInFix >> *isFixed)
+    {
+        if (*ID == *localNumber)
+        {
+            *isBroken = false;
+
+            ofstream foutCom(au2, ios_base::app);
+            foutCom << *versionOfOS << " " << *nameScreen << " " << *nameCPU << " " << *nameGPU << " " << *hardDiscCapacity << " "
+                    << *typeOfKeyboard << " " << *localNumber << " " << *isBroken << endl;
+
+            foutCom.close();
+        }
+    }
+    finCom.close();
+
+    ifstream finCom1(fix_au2);
+    ofstream foutCom1("temp.txt");
+    while (finCom1 >> *versionOfOS >> *nameScreen >> *nameCPU >> *nameGPU >> *hardDiscCapacity >> *typeOfKeyboard >> *localNumber >> *isBroken >> *isInFix >> *isFixed)
+    {
+        if (*ID != *localNumber)
+        {
+            foutCom1 << *versionOfOS << " " << *nameScreen << " " << *nameCPU << " " << *nameGPU << " " << *hardDiscCapacity << " "
+                     << *typeOfKeyboard << " " << *localNumber << " " << *isBroken << " " << *isInFix << " " << *isFixed << endl;
+        }
+    }
+
+    finCom1.close();
+    foutCom1.close();
+
+    remove(fix_au2.c_str());
+    rename("temp.txt", fix_au2.c_str());
+
+    cout << "Computer with this ID: '" << *ID << "' was moved to database with workable computers" << endl;
+}
+
+void Registration()
+{
+    string filename = R"(T:\\course_work\\data-base\\Inspectors.txt)";
+
+    cout << "Welcome!" << endl
+         << "You need to log in to the system" << endl;
+
+    unique_ptr<string> name {new string {"unknown"}};
+    cout << "Enter your name: ";
+    cin >> *name;
+
+    unique_ptr<string> surname {new string {"unknown"}};
+    cout << "Enter your surname: ";
+    cin >> *surname;
+
+    unique_ptr<string> password {new string {"unknown"}};
+    cout << "Enter your password: ";
+    cin >> *password;
+
+    ofstream foutIns (filename, ios_base::app);
+    foutIns << *name << " " << *surname << " " << *password << endl;
+    foutIns.close();
+}
+
+void ShowInspectors()
+{
+    ifstream finIns(R"(T:\course_work\data-base\Inspectors.txt)");
+    if (!finIns.is_open())
+        cerr << "Error opening file!" << endl;
+
+    unique_ptr<string> name {new string {"unknown"}};
+    unique_ptr<string> surname {new string {"unknown"}};
+    unique_ptr<string> password {new string {"unknown"}};
+
+    while (finIns >> *name >> *surname >> *password)
+    {
+        line();
+        cout << "Name: " << *name << endl
+             << "Surname: " << *surname << endl
+             << "Password: " << *password << endl;
+        line();
+    }
+
+    finIns.close();
 }

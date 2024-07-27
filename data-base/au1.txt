@@ -1,1 +1,1 @@
-8 hp amd amd 0 0 digital 123 0
+10 samsung intel amd 1 0 phisical 123 0
